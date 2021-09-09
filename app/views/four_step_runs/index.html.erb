@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Four Step Runs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @four_step_runs.each do |four_step_run| %>
+      <tr>
+        <td><%= link_to 'Show', four_step_run %></td>
+        <td><%= link_to 'Edit', edit_four_step_run_path(four_step_run) %></td>
+        <td><%= link_to 'Destroy', four_step_run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Four Step Run', new_four_step_run_path %>

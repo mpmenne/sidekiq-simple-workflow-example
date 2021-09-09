@@ -1,0 +1,2 @@
+class FourStepRun < ApplicationRecord
+end
