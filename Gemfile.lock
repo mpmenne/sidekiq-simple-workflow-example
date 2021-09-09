@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mpmenne/sidekiq-simple-workflow.git
-  revision: 86afed80ab33fae276d8dfffae0576694a3217b3
+  revision: 6927d67be54e06797aaa6fad9344e65b44c86d5f
   specs:
     sidekiq-simple_workflow (0.1.0)
       sidekiq (>= 2.4.0)
@@ -82,6 +82,8 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
+    binding_of_caller (1.0.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.8.1)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -95,9 +97,11 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    coderay (1.1.3)
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
+    debug_inspector (1.1.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -127,6 +131,17 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.4-x86_64-darwin)
       racc (~> 1.4)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
+    pry-stack_explorer (0.6.1)
+      binding_of_caller (~> 1.0)
+      pry (~> 0.13)
     public_suffix (4.0.6)
     puma (5.4.0)
       nio4r (~> 2.0)
@@ -234,6 +249,9 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pry-byebug
+  pry-rails
+  pry-stack_explorer (~> 0.6.0)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
