@@ -1,0 +1,17 @@
+<%= form_with(model: four_step_run) do |form| %>
+  <% if four_step_run.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(four_step_run.errors.count, "error") %> prohibited this four_step_run from being saved:</h2>
+
+      <ul>
+        <% four_step_run.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
