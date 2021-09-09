@@ -16,7 +16,7 @@ class FourStepRunsController < ApplicationController
   def create
     @four_step_run = FourStepRun.new(four_step_run_params)
     FourStepWorkflow.perform_async
-    ExampleWorker.perform_async
+    TenStepWorkflow.perform_async
 
     respond_to do |format|
       if @four_step_run.save
