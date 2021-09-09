@@ -1,35 +1,36 @@
 class FourStepRunsController < ApplicationController
   before_action :set_four_step_run, only: %i[ show edit update destroy ]
 
-  # GET /four_step_runs or /four_step_runs.json
   def index
     @four_step_runs = FourStepRun.all
   end
 
-  # GET /four_step_runs/1 or /four_step_runs/1.json
-  def show
-  end
+  def show; end
 
-  # GET /four_step_runs/new
   def new
     @four_step_run = FourStepRun.new
   end
 
-  # GET /four_step_runs/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /four_step_runs or /four_step_runs.json
   def create
     @four_step_run = FourStepRun.new(four_step_run_params)
+    FourStepWorkflow.perform_async
+    ExampleWorker.perform_async
 
     respond_to do |format|
       if @four_step_run.save
-        format.html { redirect_to @four_step_run, notice: "Four step run was successfully created." }
-        format.json { render :show, status: :created, location: @four_step_run }
+        format.html {
+          redirect_to @four_step_run, notice: "Four step run was created."
+        }
+        format.json { 
+          render :show, status: :created, location: @four_step_run
+        }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @four_step_run.errors, status: :unprocessable_entity }
+        format.json { 
+          render json: @four_step_run.errors, status: :unprocessable_entity
+        }
       end
     end
   end
@@ -38,11 +39,15 @@ class FourStepRunsController < ApplicationController
   def update
     respond_to do |format|
       if @four_step_run.update(four_step_run_params)
-        format.html { redirect_to @four_step_run, notice: "Four step run was successfully updated." }
+        format.html {
+          redirect_to @four_step_run, notice: "Four step run was updated."
+        }
         format.json { render :show, status: :ok, location: @four_step_run }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @four_step_run.errors, status: :unprocessable_entity }
+        format.json { 
+          render json: @four_step_run.errors, status: :unprocessable_entity
+        }
       end
     end
   end

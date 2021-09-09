@@ -1,3 +1,10 @@
+PATH
+  remote: /Users/mikemenne/Code/OpenSource/sidekiq-simple-workflow
+  specs:
+    sidekiq-simple_workflow (0.1.0)
+      sidekiq (>= 2.4.0)
+      sidekiq-pro (>= 3.0, < 6.1)
+
 GEM
   remote: https://enterprise.contribsys.com/
   specs:
@@ -233,6 +240,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq-ent!
   sidekiq-pro!
+  sidekiq-simple_workflow!
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)

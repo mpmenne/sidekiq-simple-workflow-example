@@ -12,7 +12,9 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "jbuilder", "~> 2.7"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
-gem 'sassc-rails'
+gem "sassc-rails"
+#gem "sidekiq-simple_workflow", github: "mpmenne/sidekiq-simple-workflow"
+gem "sidekiq-simple_workflow", path: "/Users/mikemenne/Code/OpenSource/sidekiq-simple-workflow"
 gem "sqlite3", "~> 1.4"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
